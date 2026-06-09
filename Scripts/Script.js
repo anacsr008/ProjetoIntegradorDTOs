@@ -65,5 +65,5 @@ function SalvarEvento(event) {
     elementoMensagem.style.color = "#2ecc71"; 
 
     
-    console.log("DTO gerado com sucesso:", eventoDTO);
+    console.log(eventoDTO);
 }
