@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/NovoEvento.css">
+    <title></title>
+</head>
+<body>
+    <a href="PaginaPrincipal.html">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12L0 6L6 0L7.4 1.45L3.85 5H16V7H3.85L7.4 10.55L6 12Z" fill="white"/>
+        </svg>
+        Voltar para eventos
+    </a>
+    <form>
+        <h1>Cadastrar Novo Evento</h1>
+        <p>Preencha todos os campos obrigatórios para criar o evento</p>
+
+        <!-- nome_evento -->
+        <label>Nome do Evento<span class="asterisco-obrigatorio">*</span></label>
+        <input type="text" id="nome_evento">
+
+        <!-- descricao -->
+        <label>Descrição<span class="asterisco-obrigatorio">*</span></label>
+        <input type="text" id="descricao">
+
+        <div class="Datas">
+            <!-- data_inicio -->
+            <label>Data de Início<span class="asterisco-obrigatorio">*</span></label>
+            <input type="date" id="data_inicio">
+
+            <!-- data_fim -->
+            <label>Data de Término<span class="asterisco-obrigatorio">*</span></label>
+            <input type="date" id="data_fim">
+        </div>
+
+        <!-- local -->
+        <label>Local<span class="asterisco-obrigatorio">*</span></label>
+        <input type="" id="local">
+
+        <!-- limite_participantes -->
+        <label>Limite de Participantes<span class="asterisco-obrigatorio">*</span></label>
+        <input type="number" id="limite_participantes">
+
+        <a href="PaginaPrincipal.html" class="botao_cancelar">Cancelar</a>
+
+        <button onclick="SalvarEvento()">Salvar Evento</button>
+    </form>
+    <script src="/Scripts/Script.js"></script>
+</body>
+</html>
