@@ -11,6 +11,7 @@ function SalvarEvento() {
     }
 }
 
+
 class CriarEventoDTO {
     constructor({ nome, descricao, dataInicio, dataFim, local, limiteParticipantes }) {
         this.nome = nome;
@@ -21,7 +22,6 @@ class CriarEventoDTO {
         this.limite_participantes = Number(limiteParticipantes);
     }
 
-    
     validar() {
         return (
             this.nome && 
@@ -29,8 +29,41 @@ class CriarEventoDTO {
             this.data_inicio && 
             this.data_fim && 
             this.local && 
-            !isNaN(this.limite_participantes)
+            !isNaN(this.limite_participantes) &&
+            this.limite_participantes > 0 
         );
     }
 }
 
+function SalvarEvento(event) {
+    if (event) event.preventDefault();
+
+    const eventoDTO = new CriarEventoDTO({
+        nome: document.getElementById("nome_evento").value.trim(),
+        descricao: document.getElementById("descricao").value.trim(),
+        dataInicio: document.getElementById("data_inicio").value,
+        dataFim: document.getElementById("data_fim").value,
+        local: document.getElementById("local").value.trim(),
+        limiteParticipantes: document.getElementById("limite_participantes").value
+    });
+
+    let elementoMensagem = document.getElementById("mensagem-feedback");
+    if (!elementoMensagem) {
+        elementoMensagem = document.createElement("p");
+        elementoMensagem.id = "mensagem-feedback";
+        document.querySelector("form").appendChild(elementoMensagem);
+    }
+
+    if (!eventoDTO.validar()) {
+        elementoMensagem.innerText = "Não foi possível criar um novo evento, preencha todos os campos indicados.";
+        elementoMensagem.style.color = "#ff4d4d";
+        return;
+    }
+
+    
+    elementoMensagem.innerText = "Evento criado com sucesso!";
+    elementoMensagem.style.color = "#2ecc71"; 
+
+    
+    console.log("DTO gerado com sucesso:", eventoDTO);
+}
