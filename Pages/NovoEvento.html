@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>EventHub Solutions</title>
+  <link rel="icon" type="image/png" href="/Images/Logo.png">
+</head>
+<body>
+
+  <a href="PaginaPrincipal.html">
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 12L0 6L6 0L7.4 1.45L3.85 5H16V7H3.85L7.4 10.55L6 12Z" fill="white"/>
+    </svg>
+    Voltar para eventos
+  </a>
+
+  <form>
+    <h1>Cadastrar Novo Evento</h1>
+    <p>Preencha todos os campos obrigatórios para criar o evento</p>
+
+    <!-- nome_evento -->
+    <label>Nome do Evento<span class="asterisco-obrigatorio">*</span></label>
+    <input type="text" id="nome_evento" placeholder="Ex: Workshop de React Avançado">
+
+    <!-- descricao -->
+    <label>Descrição<span class="asterisco-obrigatorio">*</span></label>
+    <input type="text" id="descricao" placeholder="Descreva o evento: objetivos, público-alvo...">
+
+    <div class="Datas">
+      <div class="campo-data">
+        <label>Data de Início<span class="asterisco-obrigatorio">*</span></label>
+        <input type="date" id="data_inicio">
+      </div>
+      <div class="campo-data">
+        <label>Data de Término<span class="asterisco-obrigatorio">*</span></label>
+        <input type="date" id="data_fim">
+      </div>
+    </div>
+
+    <!-- local -->
+    <label>Local<span class="asterisco-obrigatorio">*</span></label>
+    <input type="text" id="local" placeholder="Ex: Senai Cruzeiro">
+
+    <!-- limite_participantes -->
+    <label>Limite de Participantes<span class="asterisco-obrigatorio">*</span></label>
+    <input type="number" id="limite_participantes" placeholder="Ex: 10">
+
+    <!-- ID (usado para PUT e DELETE) -->
+    <label>ID do Evento <span style="font-size: 0.85em; opacity: 0.6;">(necessário para atualizar ou remover)</span></label>
+    <input type="number" id="evento_id" placeholder="Ex: 1">
+
+    <div class="botoes">
+      <a href="PaginaPrincipal.html" class="botao_cancelar">Cancelar</a>
+      <button type="button" onclick="SalvarEvento()">Salvar Evento</button>
+      <button type="button" class="botao_atualizar" onclick="AtualizarEvento()">Atualizar Evento</button>
+      <button type="button" class="botao_deletar" onclick="DeletarEvento()">Remover Evento</button>
+    </div>
+  </form>
+
+  <script src="../Scripts/NovoEvento.js"></script>
+</body>
+</html>
